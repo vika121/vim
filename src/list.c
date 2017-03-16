@@ -666,7 +666,7 @@ vimlist_remove(list_T *l, listitem_T *item, listitem_T *item2)
 	    break;
     }
 
-    if (item2->li_next == NULL)
+    if (item2 && (item2->li_next == NULL))
 	l->lv_last = item->li_prev;
     else
 	item2->li_next->li_prev = item->li_prev;
